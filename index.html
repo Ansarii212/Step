@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +22,7 @@
         }
         h1, h2 {
             text-align: center;
-            color: #4CAF50;
+            color: #00bcd4;
         }
         .form-group {
             margin-bottom: 15px;
@@ -44,7 +44,7 @@
             margin: 5px 0;
         }
         .btn {
-            background-color: #4CAF50;
+            background-color: #00bcd4;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -54,14 +54,14 @@
             display: inline-block;
         }
         .btn:hover {
-            background-color: #45a049;
+            background-color: #0097a7;
         }
-        .btn-save, .btn-edit, .btn-submit {
+        .btn-submit {
             display: inline-block;
             margin: 5px;
         }
         .section-header {
-            background-color: #4CAF50;
+            background-color: #00bcd4;
             color: white;
             padding: 10px;
             border-radius: 10px;
@@ -113,24 +113,286 @@
         <!-- قسم القراءة -->
         <div class="section-header">قسم القراءة</div>
         <div id="reading-section">
-            <!-- Example of a Reading Passage -->
+            <!-- 10 فقرات قراءة مع 4 أسئلة اختيارية لكل فقرة -->
             <div class="question" id="q1">
                 <p><strong>الفقرة 1:</strong> [أدخل النص هنا]</p>
                 <ul class="options">
-                    <li><input type="radio" name="q1" id="q1a" value="A"> الخيار 1</li>
-                    <li><input type="radio" name="q1" id="q1b" value="B"> الخيار 2</li>
-                    <li><input type="radio" name="q1" id="q1c" value="C"> الخيار 3</li>
-                    <li><input type="radio" name="q1" id="q1d" value="D"> الخيار 4</li>
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
                 </ul>
-                <button class="btn-save" onclick="saveAnswer('q1', 'A')">حفظ الإجابة</button>
-                <button class="btn-edit" onclick="editAnswer('q1')">تعديل الإجابة</button>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
             </div>
+            <div class="question" id="q1">
+                <p><strong>الفقرة 1:</strong> [أدخل النص هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="q1">
+                <p><strong>الفقرة 1:</strong> [أدخل النص هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+
+            <div class="question" id="q1">
+                <p><strong>الفقرة 1:</strong> [أدخل النص هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="q1">
+                <p><strong>الفقرة 1:</strong> [أدخل النص هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="q1">
+                <p><strong>الفقرة 1:</strong> [أدخل النص هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="q1">
+                <p><strong>الفقرة 1:</strong> [أدخل النص هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="q1">
+                <p><strong>الفقرة 1:</strong> [أدخل النص هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="q1">
+                <p><strong>الفقرة 1:</strong> [أدخل النص هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="q1">
+                <p><strong>الفقرة 1:</strong> [أدخل النص هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+                      <ul class="options">
+                    <li><input type="radio" name="q1" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="q1" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="q1" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="q1" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            
+            <!-- يمكنك تكرار فقرات القراءة هنا حتى 10 فقرات -->
         </div>
 
         <!-- قسم القواعد -->
         <div class="section-header">قسم القواعد</div>
         <div id="grammar-section">
-            <!-- Example of Grammar Question -->
+            <!-- 30 سؤال اختيار من متعدد -->
             <div class="question" id="grammar-q1">
                 <p><strong>سؤال 1:</strong> [أدخل السؤال هنا]</p>
                 <ul class="options">
@@ -139,15 +401,275 @@
                     <li><input type="radio" name="grammar-q1" value="C"> الخيار 3</li>
                     <li><input type="radio" name="grammar-q1" value="D"> الخيار 4</li>
                 </ul>
-                <button class="btn-save" onclick="saveAnswer('grammar-q1', 'B')">حفظ الإجابة</button>
-                <button class="btn-edit" onclick="editAnswer('grammar-q1')">تعديل الإجابة</button>
             </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="grammar-q2">
+                <p><strong>سؤال 2:</strong> [أدخل السؤال هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="grammar-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="grammar-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="grammar-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="grammar-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <!-- يمكنك تكرار أسئلة القواعد هنا حتى 30 سؤال -->
         </div>
 
         <!-- قسم الاستماع -->
         <div class="section-header">قسم الاستماع</div>
         <div id="listening-section">
-            <!-- Example of Listening Question -->
+            <!-- 5 فقرات استماع مع 4 أسئلة اختيارية لكل فقرة -->
             <div class="question" id="listening-q1">
                 <p><strong>فقرة الاستماع 1 🎧:</strong> <a href="audiofile1.mp3" target="_blank">استمع هنا</a></p>
                 <ul class="options">
@@ -156,26 +678,86 @@
                     <li><input type="radio" name="listening-q1" value="C"> الخيار 3</li>
                     <li><input type="radio" name="listening-q1" value="D"> الخيار 4</li>
                 </ul>
-                <button class="btn-save" onclick="saveAnswer('listening-q1', 'C')">حفظ الإجابة</button>
-                <button class="btn-edit" onclick="editAnswer('listening-q1')">تعديل الإجابة</button>
             </div>
+            <div class="question" id="listening-q2">
+                <p><strong>فقرة الاستماع 2 🎧:</strong> <a href="audiofile2.mp3" target="_blank">استمع هنا</a></p>
+                <ul class="options">
+                    <li><input type="radio" name="listening-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="listening-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="listening-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="listening-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="listening-q2">
+                <p><strong>فقرة الاستماع 2 🎧:</strong> <a href="audiofile2.mp3" target="_blank">استمع هنا</a></p>
+                <ul class="options">
+                    <li><input type="radio" name="listening-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="listening-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="listening-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="listening-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="listening-q2">
+                <p><strong>فقرة الاستماع 2 🎧:</strong> <a href="audiofile2.mp3" target="_blank">استمع هنا</a></p>
+                <ul class="options">
+                    <li><input type="radio" name="listening-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="listening-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="listening-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="listening-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <div class="question" id="listening-q2">
+                <p><strong>فقرة الاستماع 2 🎧:</strong> <a href="audiofile2.mp3" target="_blank">استمع هنا</a></p>
+                <ul class="options">
+                    <li><input type="radio" name="listening-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="listening-q2" value="B"> الخيار 2</li>
+                    <li><input type="radio" name="listening-q2" value="C"> الخيار 3</li>
+                    <li><input type="radio" name="listening-q2" value="D"> الخيار 4</li>
+                </ul>
+            </div>
+            <!-- يمكنك تكرار فقرات الاستماع هنا حتى 5 فقرات -->
         </div>
 
         <!-- قسم التحليل الكتابي -->
         <div class="section-header">قسم التحليل الكتابي</div>
         <div id="writing-section">
-            <!-- Example of Writing Question -->
+            <!-- 5 فقرات تحليل مع 2 سؤال اختيار لكل فقرة -->
             <div class="question" id="writing-q1">
                 <p><strong>فقرة 1:</strong> [أدخل الفقرة هنا]</p>
                 <ul class="options">
                     <li><input type="radio" name="writing-q1" value="A"> الخيار 1</li>
                     <li><input type="radio" name="writing-q1" value="B"> الخيار 2</li>
-                    <li><input type="radio" name="writing-q1" value="C"> الخيار 3</li>
-                    <li><input type="radio" name="writing-q1" value="D"> الخيار 4</li>
                 </ul>
-                <button class="btn-save" onclick="saveAnswer('writing-q1', 'D')">حفظ الإجابة</button>
-                <button class="btn-edit" onclick="editAnswer('writing-q1')">تعديل الإجابة</button>
             </div>
+            <div class="question" id="writing-q2">
+                <p><strong>فقرة 2:</strong> [أدخل الفقرة هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="writing-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="writing-q2" value="B"> الخيار 2</li>
+                </ul>
+            </div>
+               <div class="question" id="writing-q2">
+                <p><strong>فقرة 2:</strong> [أدخل الفقرة هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="writing-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="writing-q2" value="B"> الخيار 2</li>
+                </ul>
+            </div>
+               <div class="question" id="writing-q2">
+                <p><strong>فقرة 2:</strong> [أدخل الفقرة هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="writing-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="writing-q2" value="B"> الخيار 2</li>
+                </ul>
+            </div>
+               <div class="question" id="writing-q2">
+                <p><strong>فقرة 2:</strong> [أدخل الفقرة هنا]</p>
+                <ul class="options">
+                    <li><input type="radio" name="writing-q2" value="A"> الخيار 1</li>
+                    <li><input type="radio" name="writing-q2" value="B"> الخيار 2</li>
+                </ul>
+            </div>
+            <!-- يمكنك تكرار فقرات التحليل الكتابي هنا حتى 5 فقرات -->
         </div>
 
         <!-- زر ارسال الاختبار -->
@@ -189,58 +771,29 @@
             <p>تم اجتياز الاختبار بنجاح!</p>
         </div>
         <div class="certificate" id="certificate">
-            <p>شهادة اجتياز الاختبار</p>
-            <p>تم اجتياز الاختبار بنجاح</p>
+            <h2>شهادة تقدير</h2>
+            <p>تم اجتياز الاختبار بنجاح!</p>
         </div>
-
     </div>
 </div>
 
 <script>
-    var correctAnswers = {
-        'q1': 'A',
-        'grammar-q1': 'B',
-        'listening-q1': 'C',
-        'writing-q1': 'D'
-    };
-
-    function saveAnswer(questionId, answer) {
-        localStorage.setItem(questionId, answer);
-        alert('تم حفظ الإجابة!');
-        // Disable the "save" button after saving the answer
-        document.querySelector(`#${questionId} .btn-save`).disabled = true;
-    }
-
-    function editAnswer(questionId) {
-        // Enable the "save" button for editing
-        document.querySelector(`#${questionId} .btn-save`).disabled = false;
-        localStorage.removeItem(questionId); // Clear saved answer when editing
-        alert('تم تعديل الإجابة! يمكنك الآن حفظ الإجابة المعدلة.');
-    }
-
-    function checkAnswers() {
-        var score = 0;
-        var total = Object.keys(correctAnswers).length;
-        for (var qid in correctAnswers) {
-            var userAnswer = localStorage.getItem(qid);
-            if (userAnswer === correctAnswers[qid]) {
-                score++;
-            }
-        }
-        return score;
-    }
-
-    document.getElementById('submit-exam').addEventListener('click', function() {
-        var score = checkAnswers();
-        document.getElementById('result').innerHTML = '<h2>النتيجة</h2><p>درجتك: ' + score + ' من ' + Object.keys(correctAnswers).length + '</p>';
-        document.getElementById('result').style.display = 'block';
-
-        if (score >= Object.keys(correctAnswers).length * 0.7) {
-            document.getElementById('certificate').style.display = 'block';
+    // الوظائف البرمجية للتفاعل مع الاختبار
+    document.getElementById('save-student-info').addEventListener('click', function () {
+        let name = document.getElementById('student-name').value;
+        let phone = document.getElementById('student-phone').value;
+        if (name && phone) {
+            alert('تم حفظ بيانات الطالب');
         } else {
-            document.getElementById('certificate').innerHTML = '<p>لم تجتز الاختبار. حظاً أوفر!</p>';
-            document.getElementById('certificate').style.display = 'block';
+            alert('يرجى إدخال جميع البيانات');
         }
+    });
+
+    document.getElementById('submit-exam').addEventListener('click', function () {
+        // هنا يتم حساب النتيجة بناءً على إجابات الطالب
+        let result = 85; // مثلاً النتيجة النهائية 85%
+        document.getElementById('result').style.display = 'block';
+        document.getElementById('certificate').style.display = 'block';
     });
 </script>
 
