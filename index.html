@@ -114,7 +114,7 @@
         <div class="section-header">قسم القراءة</div>
         <div id="reading-section">
             <!-- Example of a Reading Passage -->
-            <div class="question">
+            <div class="question" id="q1">
                 <p><strong>الفقرة 1:</strong> [أدخل النص هنا]</p>
                 <ul class="options">
                     <li><input type="radio" name="q1" id="q1a" value="A"> الخيار 1</li>
@@ -131,7 +131,7 @@
         <div class="section-header">قسم القواعد</div>
         <div id="grammar-section">
             <!-- Example of Grammar Question -->
-            <div class="question">
+            <div class="question" id="grammar-q1">
                 <p><strong>سؤال 1:</strong> [أدخل السؤال هنا]</p>
                 <ul class="options">
                     <li><input type="radio" name="grammar-q1" value="A"> الخيار 1</li>
@@ -139,7 +139,7 @@
                     <li><input type="radio" name="grammar-q1" value="C"> الخيار 3</li>
                     <li><input type="radio" name="grammar-q1" value="D"> الخيار 4</li>
                 </ul>
-                <button class="btn-save" onclick="saveAnswer('grammar-q1', 'A')">حفظ الإجابة</button>
+                <button class="btn-save" onclick="saveAnswer('grammar-q1', 'B')">حفظ الإجابة</button>
                 <button class="btn-edit" onclick="editAnswer('grammar-q1')">تعديل الإجابة</button>
             </div>
         </div>
@@ -148,7 +148,7 @@
         <div class="section-header">قسم الاستماع</div>
         <div id="listening-section">
             <!-- Example of Listening Question -->
-            <div class="question">
+            <div class="question" id="listening-q1">
                 <p><strong>فقرة الاستماع 1 🎧:</strong> <a href="audiofile1.mp3" target="_blank">استمع هنا</a></p>
                 <ul class="options">
                     <li><input type="radio" name="listening-q1" value="A"> الخيار 1</li>
@@ -156,7 +156,7 @@
                     <li><input type="radio" name="listening-q1" value="C"> الخيار 3</li>
                     <li><input type="radio" name="listening-q1" value="D"> الخيار 4</li>
                 </ul>
-                <button class="btn-save" onclick="saveAnswer('listening-q1', 'A')">حفظ الإجابة</button>
+                <button class="btn-save" onclick="saveAnswer('listening-q1', 'C')">حفظ الإجابة</button>
                 <button class="btn-edit" onclick="editAnswer('listening-q1')">تعديل الإجابة</button>
             </div>
         </div>
@@ -165,7 +165,7 @@
         <div class="section-header">قسم التحليل الكتابي</div>
         <div id="writing-section">
             <!-- Example of Writing Question -->
-            <div class="question">
+            <div class="question" id="writing-q1">
                 <p><strong>فقرة 1:</strong> [أدخل الفقرة هنا]</p>
                 <ul class="options">
                     <li><input type="radio" name="writing-q1" value="A"> الخيار 1</li>
@@ -173,7 +173,7 @@
                     <li><input type="radio" name="writing-q1" value="C"> الخيار 3</li>
                     <li><input type="radio" name="writing-q1" value="D"> الخيار 4</li>
                 </ul>
-                <button class="btn-save" onclick="saveAnswer('writing-q1', 'A')">حفظ الإجابة</button>
+                <button class="btn-save" onclick="saveAnswer('writing-q1', 'D')">حفظ الإجابة</button>
                 <button class="btn-edit" onclick="editAnswer('writing-q1')">تعديل الإجابة</button>
             </div>
         </div>
@@ -197,31 +197,50 @@
 </div>
 
 <script>
+    var correctAnswers = {
+        'q1': 'A',
+        'grammar-q1': 'B',
+        'listening-q1': 'C',
+        'writing-q1': 'D'
+    };
+
     function saveAnswer(questionId, answer) {
         localStorage.setItem(questionId, answer);
         alert('تم حفظ الإجابة!');
+        // Disable the "save" button after saving the answer
+        document.querySelector(`#${questionId} .btn-save`).disabled = true;
     }
 
     function editAnswer(questionId) {
-        var savedAnswer = localStorage.getItem(questionId);
-        alert('الإجابة المحفوظة: ' + savedAnswer);
+        // Enable the "save" button for editing
+        document.querySelector(`#${questionId} .btn-save`).disabled = false;
+        localStorage.removeItem(questionId); // Clear saved answer when editing
+        alert('تم تعديل الإجابة! يمكنك الآن حفظ الإجابة المعدلة.');
     }
 
-    // Load saved answers when the page loads
-    window.onload = function() {
-        var questions = ['q1', 'grammar-q1', 'listening-q1', 'writing-q1'];
-        questions.forEach(function(question) {
-            var savedAnswer = localStorage.getItem(question);
-            if (savedAnswer) {
-                document.querySelector(`input[name=${question}][value=${savedAnswer}]`).checked = true;
+    function checkAnswers() {
+        var score = 0;
+        var total = Object.keys(correctAnswers).length;
+        for (var qid in correctAnswers) {
+            var userAnswer = localStorage.getItem(qid);
+            if (userAnswer === correctAnswers[qid]) {
+                score++;
             }
-        });
+        }
+        return score;
     }
 
-    // Submit exam function
     document.getElementById('submit-exam').addEventListener('click', function() {
+        var score = checkAnswers();
+        document.getElementById('result').innerHTML = '<h2>النتيجة</h2><p>درجتك: ' + score + ' من ' + Object.keys(correctAnswers).length + '</p>';
         document.getElementById('result').style.display = 'block';
-        document.getElementById('certificate').style.display = 'block';
+
+        if (score >= Object.keys(correctAnswers).length * 0.7) {
+            document.getElementById('certificate').style.display = 'block';
+        } else {
+            document.getElementById('certificate').innerHTML = '<p>لم تجتز الاختبار. حظاً أوفر!</p>';
+            document.getElementById('certificate').style.display = 'block';
+        }
     });
 </script>
 
