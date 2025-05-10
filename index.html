@@ -1,215 +1,189 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STEP Exam</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
-            direction: rtl;
-            text-align: right;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
-            text-align: center;
-            color: #4CAF50;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            font-weight: bold;
-        }
-        .question {
-            background-color: #e0f7fa;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 10px;
-        }
-        .options {
-            list-style: none;
-            padding: 0;
-        }
-        .options li {
-            margin: 5px 0;
-        }
-        .btn {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-            display: inline-block;
-        }
-        .btn:hover {
-            background-color: #45a049;
-        }
-        .btn-save, .btn-edit, .btn-submit {
-            display: inline-block;
-            margin: 5px;
-        }
-        .section-header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px;
-            border-radius: 10px;
-            margin-top: 30px;
-            text-align: center;
-        }
-        .result, .certificate {
-            display: none;
-            text-align: center;
-            background-color: #f1f1f1;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-        .certificate {
-            background-color: #ffeb3b;
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-        .input-fields {
-            margin-bottom: 20px;
-        }
-        .input-fields input {
-            width: 100%;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اختبار STEP</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      direction: rtl;
+      background: #f9f9f9;
+      color: #333;
+    }
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      text-align: center;
+      color: #00695c;
+    }
+    .section-header {
+      background: #00695c;
+      color: #fff;
+      padding: 10px;
+      margin-top: 30px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 20px;
+    }
+    .question-box {
+      background: #e0f2f1;
+      margin: 15px 0;
+      padding: 15px;
+      border-radius: 15px;
+    }
+    .options label {
+      display: block;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+    .btn {
+      padding: 8px 15px;
+      border: none;
+      border-radius: 8px;
+      background: #00796b;
+      color: white;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #004d40;
+    }
+    .input-group {
+      margin-bottom: 15px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .result, .certificate {
+      display: none;
+      text-align: center;
+      background: #f1f8e9;
+      border-radius: 15px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .certificate {
+      font-size: 1.4em;
+      font-weight: bold;
+      background: #ffe082;
+    }
+  </style>
 </head>
 <body>
-
-<div class="container">
-    <h1>اختبار STEP</h1>
-
-    <!-- اسم الطالب ورقم الجوال -->
-    <div class="input-fields">
-        <label for="student-name">اسم الطالب:</label>
-        <input type="text" id="student-name" placeholder="أدخل اسم الطالب">
+  <div class="container">
+    <h1>نموذج اختبار STEP</h1>
+    <!-- معلومات الطالب -->
+    <div class="input-group">
+      <label for="student-name">اسم الطالب:</label>
+      <input type="text" id="student-name" placeholder="أدخل اسم الطالب">
     </div>
-    <div class="input-fields">
-        <label for="student-phone">رقم الجوال:</label>
-        <input type="text" id="student-phone" placeholder="أدخل رقم الجوال">
+    <div class="input-group">
+      <label for="student-phone">رقم الجوال:</label>
+      <input type="text" id="student-phone" placeholder="أدخل رقم الجوال">
     </div>
     <button class="btn" id="save-student-info">حفظ البيانات</button>
 
-    <div id="exam-content">
-
-        <!-- قسم القراءة -->
-        <div class="section-header">قسم القراءة</div>
-        <div id="reading-section">
-            <!-- Example of a Reading Passage -->
-            <div class="question">
-                <p><strong>الفقرة 1:</strong> [أدخل النص هنا]</p>
-                <ul class="options">
-                    <li><input type="radio" name="q1" id="q1a" value="A"> الخيار 1</li>
-                    <li><input type="radio" name="q1" id="q1b" value="B"> الخيار 2</li>
-                    <li><input type="radio" name="q1" id="q1c" value="C"> الخيار 3</li>
-                    <li><input type="radio" name="q1" id="q1d" value="D"> الخيار 4</li>
-                </ul>
-                <button class="btn-save">حفظ الإجابة</button>
-                <button class="btn-edit">تعديل الإجابة</button>
-            </div>
+    <!-- قسم القراءة -->
+    <div class="section-header">قسم القراءة</div>
+    <div id="reading-section">
+      <div class="question-box">
+        <p><strong>الفقرة 1:</strong> [أدخل النص هنا]</p>
+        <div class="options">
+          <label><input type="radio" name="q1" value="A"> الخيار 1</label>
+          <label><input type="radio" name="q1" value="B"> الخيار 2</label>
+          <label><input type="radio" name="q1" value="C"> الخيار 3</label>
+          <label><input type="radio" name="q1" value="D"> الخيار 4</label>
         </div>
-
-        <!-- قسم القواعد -->
-        <div class="section-header">قسم القواعد</div>
-        <div id="grammar-section">
-            <!-- Example of Grammar Question -->
-            <div class="question">
-                <p><strong>سؤال 1:</strong> [أدخل السؤال هنا]</p>
-                <ul class="options">
-                    <li><input type="radio" name="grammar-q1" value="A"> الخيار 1</li>
-                    <li><input type="radio" name="grammar-q1" value="B"> الخيار 2</li>
-                    <li><input type="radio" name="grammar-q1" value="C"> الخيار 3</li>
-                    <li><input type="radio" name="grammar-q1" value="D"> الخيار 4</li>
-                </ul>
-                <button class="btn-save">حفظ الإجابة</button>
-                <button class="btn-edit">تعديل الإجابة</button>
-            </div>
-        </div>
-
-        <!-- قسم الاستماع -->
-        <div class="section-header">قسم الاستماع</div>
-        <div id="listening-section">
-            <!-- Example of Listening Question -->
-            <div class="question">
-                <p><strong>فقرة الاستماع 1 🎧:</strong> <a href="audiofile1.mp3" target="_blank">استمع هنا</a></p>
-                <ul class="options">
-                    <li><input type="radio" name="listening-q1" value="A"> الخيار 1</li>
-                    <li><input type="radio" name="listening-q1" value="B"> الخيار 2</li>
-                    <li><input type="radio" name="listening-q1" value="C"> الخيار 3</li>
-                    <li><input type="radio" name="listening-q1" value="D"> الخيار 4</li>
-                </ul>
-                <button class="btn-save">حفظ الإجابة</button>
-                <button class="btn-edit">تعديل الإجابة</button>
-            </div>
-        </div>
-
-        <!-- قسم التحليل الكتابي -->
-        <div class="section-header">قسم التحليل الكتابي</div>
-        <div id="writing-section">
-            <!-- Example of Writing Question -->
-            <div class="question">
-                <p><strong>فقرة 1:</strong> [أدخل الفقرة هنا]</p>
-                <ul class="options">
-                    <li><input type="radio" name="writing-q1" value="A"> الخيار 1</li>
-                    <li><input type="radio" name="writing-q1" value="B"> الخيار 2</li>
-                    <li><input type="radio" name="writing-q1" value="C"> الخيار 3</li>
-                    <li><input type="radio" name="writing-q1" value="D"> الخيار 4</li>
-                </ul>
-                <button class="btn-save">حفظ الإجابة</button>
-                <button class="btn-edit">تعديل الإجابة</button>
-            </div>
-        </div>
-
-        <!-- زر ارسال الاختبار -->
-        <div class="form-group">
-            <button class="btn btn-submit" id="submit-exam">إرسال الاختبار</button>
-        </div>
-
-        <!-- عرض النتيجة والشهادة -->
-        <div class="result" id="result">
-            <h2>النتيجة</h2>
-            <p>تم اجتياز الاختبار بنجاح!</p>
-        </div>
-        <div class="certificate" id="certificate">
-            <p>شهادة اجتياز الاختبار</p>
-            <p>الاسم: <span id="certificate-name"></span></p>
-        </div>
+        <button class="btn" id="save-answer">حفظ الإجابة</button>
+      </div>
     </div>
-</div>
 
-<script>
+    <!-- قسم القواعد -->
+    <div class="section-header">قسم القواعد</div>
+    <div id="grammar-section">
+      <div class="question-box">
+        <p><strong>سؤال 1:</strong> [أدخل السؤال هنا]</p>
+        <div class="options">
+          <label><input type="radio" name="grammar-q1" value="A"> الخيار 1</label>
+          <label><input type="radio" name="grammar-q1" value="B"> الخيار 2</label>
+          <label><input type="radio" name="grammar-q1" value="C"> الخيار 3</label>
+          <label><input type="radio" name="grammar-q1" value="D"> الخيار 4</label>
+        </div>
+        <button class="btn" id="save-grammar-answer">حفظ الإجابة</button>
+      </div>
+    </div>
+
+    <!-- قسم الاستماع -->
+    <div class="section-header">قسم الاستماع</div>
+    <div id="listening-section">
+      <div class="question-box">
+        <p><strong>فقرة الاستماع 1 🎧:</strong> <a href="audiofile1.mp3" target="_blank">استمع هنا</a></p>
+        <div class="options">
+          <label><input type="radio" name="listening-q1" value="A"> الخيار 1</label>
+          <label><input type="radio" name="listening-q1" value="B"> الخيار 2</label>
+          <label><input type="radio" name="listening-q1" value="C"> الخيار 3</label>
+          <label><input type="radio" name="listening-q1" value="D"> الخيار 4</label>
+        </div>
+        <button class="btn" id="save-listening-answer">حفظ الإجابة</button>
+      </div>
+    </div>
+
+    <!-- قسم التحليل الكتابي -->
+    <div class="section-header">قسم التحليل الكتابي</div>
+    <div id="writing-section">
+      <div class="question-box">
+        <p><strong>فقرة 1:</strong> [أدخل الفقرة هنا]</p>
+        <div class="options">
+          <label><input type="radio" name="writing-q1" value="A"> الخيار 1</label>
+          <label><input type="radio" name="writing-q1" value="B"> الخيار 2</label>
+          <label><input type="radio" name="writing-q1" value="C"> الخيار 3</label>
+          <label><input type="radio" name="writing-q1" value="D"> الخيار 4</label>
+        </div>
+        <button class="btn" id="save-writing-answer">حفظ الإجابة</button>
+      </div>
+    </div>
+
+    <!-- زر إرسال الاختبار -->
+    <div class="input-group">
+      <button class="btn" id="submit-exam">إرسال الاختبار</button>
+    </div>
+
+    <!-- عرض النتيجة والشهادة -->
+    <div class="result" id="result">
+      <h2>النتيجة</h2>
+      <p>تم اجتياز الاختبار بنجاح!</p>
+    </div>
+    <div class="certificate" id="certificate">
+      <p>شهادة اجتياز الاختبار</p>
+      <p>الاسم: <span id="certificate-name"></span></p>
+    </div>
+  </div>
+
+  <script>
     document.getElementById("save-student-info").addEventListener("click", function() {
-        var name = document.getElementById("student-name").value;
-        var phone = document.getElementById("student-phone").value;
-        if (name && phone) {
-            alert("تم حفظ البيانات بنجاح!");
-        }
+      var name = document.getElementById("student-name").value;
+      var phone = document.getElementById("student-phone").value;
+      if (name && phone) {
+        alert("تم حفظ البيانات بنجاح!");
+      }
     });
 
     document.getElementById("submit-exam").addEventListener("click", function() {
-        document.getElementById("result").style.display = "block";
-        document.getElementById("certificate").style.display = "block";
-        document.getElementById("certificate-name").innerText = document.getElementById("student-name").value;
+      document.getElementById("result").style.display = "block";
+      document.getElementById("certificate").style.display = "block";
+      document.getElementById("certificate-name").innerText = document.getElementById("student-name").value;
     });
-</script>
-
+  </script>
 </body>
 </html>
