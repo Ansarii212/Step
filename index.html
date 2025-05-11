@@ -1036,52 +1036,44 @@
 
 </div>
             <!-- يمكنك تكرار فقرات التحليل الكتابي هنا حتى 5 فقرات -->
-        </div>
+    
 
         <!-- زر ارسال الاختبار -->
-          </div>
-
-  <button onclick="submitQuiz()">Submit Quiz</button>
-
-  <div class="result" id="result"></div>
-
-        <!-- عرض النتيجة والشهادة -->
-        
-    
-    </div>
-</div>
+          
+<button onclick="submitQuiz()">Submit Quiz</button>
+<div class="result" id="result"></div>
 
 <script>
     function submitQuiz() {
-  let score = 0;
+        let score = 0;
 
-  // إجابات صحيحة
-  const correctAnswers = [
-    "B", "C", "A", "D", "B", "C", "A", "D", "A", "B",
-    "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
-    "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
-    "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
-    "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
-    "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
-    "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
-    "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
-    "A", "B", "A", "B", "A", "B", "A", "B", "A", "B"
-  ];
+        // إجابات صحيحة
+        const correctAnswers = [
+            "B", "C", "A", "D", "B", "C", "A", "D", "A", "B",
+            "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
+            "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
+            "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
+            "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
+            "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
+            "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
+            "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
+            "A", "B", "A", "B", "A", "B", "A", "B", "A", "B"
+        ];
 
-  for (let question in correctAnswers) {
-    const selected = document.querySelector(`input[name="${question}"]:checked`);
-    if (selected && selected.value === correctAnswers[question]) {
-      score++;
+        // التحقق من الإجابات
+        for (let i = 0; i < correctAnswers.length; i++) {
+            const selected = document.querySelector(`input[name="question${i}"]:checked`);
+            if (selected && selected.value === correctAnswers[i]) {
+                score++;
+            }
+        }
+
+        // عرض النتيجة
+        const resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = `You got ${score} out of ${correctAnswers.length}`;
     }
-  }
 
-  // عرض النتيجة
-  const resultDiv = document.querySelector(".result");
-  resultDiv.innerHTML = `You got ${score} out of ${Object.keys(correctAnswers).length}`;
-}
-    
-}
-        // الوظائف البرمجية للتفاعل مع الاختبار
+    // الوظائف البرمجية للتفاعل مع الاختبار
     document.getElementById('save-student-info').addEventListener('click', function () {
         let name = document.getElementById('student-name').value;
         let phone = document.getElementById('student-phone').value;
@@ -1091,8 +1083,10 @@
             alert('يرجى إدخال جميع البيانات');
         }
     });
-
     
+</script>
+        
+  
 </script>
 
 </body>
