@@ -1039,10 +1039,11 @@
         </div>
 
         <!-- زر ارسال الاختبار -->
-        <div class="form-group">
-            <!-- نهاية قسم الاستماع وكل الأسئلة -->
-<button id="submit-quiz">Submit Quiz</button>
-        </div>
+          </div>
+
+  <button onclick="submitQuiz()">Submit Quiz</button>
+
+  <div class="result" id="result"></div>
 
         <!-- عرض النتيجة والشهادة -->
         
@@ -1052,7 +1053,7 @@
 
 <script>
     
-    function correctQuiz() {
+    function correctAnswers() {
   const correctAnswers = [
     "B", "C", "A", "D", "B", "C", "A", "D", "A", "B",
     "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
