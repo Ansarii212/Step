@@ -967,7 +967,7 @@
 
         <!-- زر ارسال الاختبار -->
         <div class="form-group">
-            <button class="btn btn-submit" id="submit-exam">Send </button>
+            <button onclick="correctQuiz()">Submit Quiz</button>
         </div>
 
         <!-- عرض النتيجة والشهادة -->
@@ -983,6 +983,7 @@
 </div>
 
 <script>
+    
     function correctQuiz() {
   const correctAnswers = [
     "B", "C", "A", "D", "B", "C", "A", "D", "A", "B",
@@ -1029,7 +1030,7 @@
         }
     });
 
-    <button onclick="correctQuiz()">Submit Quiz</button>
+    
 </script>
 
 </body>
