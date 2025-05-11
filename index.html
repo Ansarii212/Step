@@ -1039,8 +1039,7 @@
     
 
         <!-- زر ارسال الاختبار -->
-          
-<button onclick="submitQuiz()">Submit Quiz</button>
+          <button onclick="submitQuiz()">Submit Quiz</button>
 <div class="result" id="result"></div>
 
 <script>
@@ -1060,8 +1059,9 @@
             "A", "B", "A", "B", "A", "B", "A", "B", "A", "B"
         ];
 
-        // التحقق من الإجابات
+        // التحقق من الإجابات المختارة
         for (let i = 0; i < correctAnswers.length; i++) {
+            // البحث عن الخيار المختار لكل سؤال بناءً على رقم السؤال
             const selected = document.querySelector(`input[name="question${i}"]:checked`);
             if (selected && selected.value === correctAnswers[i]) {
                 score++;
@@ -1083,11 +1083,10 @@
             alert('يرجى إدخال جميع البيانات');
         }
     });
-    
 </script>
+
         
   
-</script>
 
 </body>
 </html>
