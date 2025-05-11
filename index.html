@@ -1052,9 +1052,34 @@
 </div>
 
 <script>
-    
     function submitQuiz() {
-  alert("الزر شغال!");
+  let score = 0;
+
+  // إجابات صحيحة
+  const correctAnswers = [
+    "B", "C", "A", "D", "B", "C", "A", "D", "A", "B",
+    "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
+    "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
+    "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
+    "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
+    "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
+    "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
+    "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
+    "A", "B", "A", "B", "A", "B", "A", "B", "A", "B"
+  ];
+
+  for (let question in correctAnswers) {
+    const selected = document.querySelector(`input[name="${question}"]:checked`);
+    if (selected && selected.value === correctAnswers[question]) {
+      score++;
+    }
+  }
+
+  // عرض النتيجة
+  const resultDiv = document.querySelector(".result");
+  resultDiv.innerHTML = `You got ${score} out of ${Object.keys(correctAnswers).length}`;
+}
+    
 }
         // الوظائف البرمجية للتفاعل مع الاختبار
     document.getElementById('save-student-info').addEventListener('click', function () {
