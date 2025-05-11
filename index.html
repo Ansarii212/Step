@@ -967,7 +967,7 @@
 
         <!-- زر ارسال الاختبار -->
         <div class="form-group">
-            <button class="btn btn-submit" id="submit-exam">إرسال الاختبار</button>
+            <button class="btn btn-submit" id="submit-exam">Send </button>
         </div>
 
         <!-- عرض النتيجة والشهادة -->
@@ -983,7 +983,42 @@
 </div>
 
 <script>
-    // الوظائف البرمجية للتفاعل مع الاختبار
+    function correctQuiz() {
+  const correctAnswers = [
+    "B", "C", "A", "D", "B", "C", "A", "D", "A", "B",
+    "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
+    "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
+    "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
+    "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
+    "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
+    "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
+    "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
+    "A", "B", "A", "B", "A", "B", "A", "B", "A", "B"
+  ];
+
+  let score = 0;
+  let total = correctAnswers.length;
+  let resultMessage = "";
+  
+  for (let i = 1; i <= total; i++) {
+    const selected = document.querySelector(`input[name="q${i}"]:checked`);
+    const question = document.querySelector(`input[name="q${i}"]`).closest('.question');
+    
+    // Check the selected answer
+    if (selected) {
+      if (selected.value === correctAnswers[i - 1]) {
+        score++;
+        question.classList.add('correct');
+      } else {
+        question.classList.add('incorrect');
+      }
+    }
+  }
+
+  resultMessage = `Your score is ${score} out of ${total}`;
+  document.getElementById('result').textContent = resultMessage;
+    }
+        // الوظائف البرمجية للتفاعل مع الاختبار
     document.getElementById('save-student-info').addEventListener('click', function () {
         let name = document.getElementById('student-name').value;
         let phone = document.getElementById('student-phone').value;
@@ -994,12 +1029,7 @@
         }
     });
 
-    document.getElementById('submit-exam').addEventListener('click', function () {
-        // هنا يتم حساب النتيجة بناءً على إجابات الطالب
-        let result = 85; // مثلاً النتيجة النهائية 85%
-        document.getElementById('result').style.display = 'block';
-        document.getElementById('certificate').style.display = 'block';
-    });
+    <button onclick="correctQuiz()">Submit Quiz</button>
 </script>
 
 </body>
