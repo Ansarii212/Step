@@ -1031,48 +1031,59 @@
         
     </div>
 
-    
-    
-<script>
+    <script>
 function correctAnswers() {
   const correctAnswers = [
-  "B", "C", "A", "D", "B", "C", "A", "D", "A", "B",
-  "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
-  "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
-  "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
-  "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
-  "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
-  "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
-  "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
-  "A", "B", "A", "B", "A", "B", "A", "B", "A", "B",  // اجابة لـ 90 سؤال
-  "B", "C", "A", "D", "B", "C", "A", "D", "A", "B",  // اجابة لـ 100 سؤال
-];
+    // q1 - q40
+    "B", "C", "A", "D", "B", "C", "A", "D", "A", "B",
+    "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
+    "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
+    "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
+    // grammar-q41 to grammar-q70
+    "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
+    "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
+    "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
+    // listening-71 to listening-90
+    "A", "B", "A", "B", "A", "B", "A", "B", "A", "B",
+    "A", "B", "A", "B", "A", "B", "A", "B", "A", "B",
+    // writing-91 to writing-100
+    "A", "B", "C", "D", "B", "C", "A", "D", "A", "B"
+  ];
 
   let score = 0;
   let total = correctAnswers.length;
+  let resultMessage = "";
 
   for (let i = 1; i <= total; i++) {
-    const selected = document.querySelector(`input[name="q${i}"]:checked`);
-    const question = document.querySelector(`input[name="q${i}"]`)?.closest('.question');
-    
-    if (!question) continue; // تجاهل لو مفيش عنصر بالسؤال
+    let name;
+    if (i <= 40) {
+      name = `q${i}`;
+    } else if (i <= 70) {
+      name = `grammar-q${i}`;
+    } else if (i <= 90) {
+      name = `listening-${i}`;
+    } else {
+      name = `writing-${i}`;
+    }
 
-    question.classList.remove('correct', 'incorrect');
+    const selected = document.querySelector(`input[name="${name}"]:checked`);
+    const question = document.querySelector(`input[name="${name}"]`)?.closest('.question');
 
     if (selected) {
       if (selected.value === correctAnswers[i - 1]) {
         score++;
-        question.classList.add('correct');
+        if (question) question.classList.add('correct');
       } else {
-        question.classList.add('incorrect');
+        if (question) question.classList.add('incorrect');
       }
     }
   }
 
-  const resultMessage = `درجتك: ${score} من ${total}`;
-  document.getElementById('quiz-result').textContent = resultMessage;
+  resultMessage = `Your score is ${score} out of ${total}`;
+  document.getElementById('submit-quiz').textContent = resultMessage;
 }
 </script>
+    
 
 </body>
 </html>
