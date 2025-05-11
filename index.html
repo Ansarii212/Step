@@ -1019,10 +1019,7 @@
                 </ul>
             </div>
         </div>
-<button id="submit-exam">تسليم الاختبار</button>
-<div id="result" style="display: none;">النتيجة النهائية</div>
-<div id="certificate" style="display: none;">شهادتك هنا</div>
-        <!-- زر ارسال الاختبار -->
+
        <!-- زر الإرسال -->
 <button id="submit-quiz" onclick="correctAnswers()">إرسال الإجابات</button>
 
@@ -1079,7 +1076,7 @@ function correctAnswers() {
     }
   }
 
-  resultMessage = `Your score is ${score} out of ${total}`;
+  resultMessage = `Your score is ${score} / ${total}`;
   document.getElementById('submit-quiz').textContent = resultMessage;
 }
 </script>
