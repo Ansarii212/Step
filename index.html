@@ -1019,11 +1019,19 @@
                 </ul>
             </div>
         </div>
-
+<button id="submit-exam">تسليم الاختبار</button>
+<div id="result" style="display: none;">النتيجة النهائية</div>
+<div id="certificate" style="display: none;">شهادتك هنا</div>
         <!-- زر ارسال الاختبار -->
+       <!-- زر الإرسال -->
+<button id="submit-quiz" onclick="correctAnswers()">إرسال الإجابات</button>
+
+<!-- مكان عرض النتيجة -->
+<p id="quiz-result"></p>
+        
     </div>
 
-    <button id="submit-quiz" onclick="correctAnswers()">إرسال الإجابات</button>
+    
     
 <script>
 function correctAnswers() {
@@ -1041,13 +1049,15 @@ function correctAnswers() {
 
   let score = 0;
   let total = correctAnswers.length;
-  let resultMessage = "";
-  
+
   for (let i = 1; i <= total; i++) {
     const selected = document.querySelector(`input[name="q${i}"]:checked`);
-    const question = document.querySelector(`input[name="q${i}"]`).closest('.question');
+    const question = document.querySelector(`input[name="q${i}"]`)?.closest('.question');
     
-    // Check the selected answer
+    if (!question) continue; // تجاهل لو مفيش عنصر بالسؤال
+
+    question.classList.remove('correct', 'incorrect');
+
     if (selected) {
       if (selected.value === correctAnswers[i - 1]) {
         score++;
@@ -1058,27 +1068,9 @@ function correctAnswers() {
     }
   }
 
-  resultMessage = `Your score is ${score} out of ${total}`;
-  document.getElementById('submit-quiz').textContent = resultMessage;
-    }
-    
-    // الوظائف البرمجية للتفاعل مع الاختبار
-    document.getElementById('save-student-info').addEventListener('click', function () {
-        let name = document.getElementById('student-name').value;
-        let phone = document.getElementById('student-phone').value;
-        if (name && phone) {
-            alert('تم حفظ بيانات الطالب');
-        } else {
-            alert('يرجى إدخال جميع البيانات');
-        }
-    });
-
-    document.getElementById('submit-exam').addEventListener('click', function () {
-        // هنا يتم حساب النتيجة بناءً على إجابات الطالب
-        let result = 85; // مثلاً النتيجة النهائية 85%
-        document.getElementById('result').style.display = 'block';
-        document.getElementById('certificate').style.display = 'block';
-    });
+  const resultMessage = `درجتك: ${score} من ${total}`;
+  document.getElementById('quiz-result').textContent = resultMessage;
+}
 </script>
 
 </body>
