@@ -1022,7 +1022,46 @@
 
         <!-- زر ارسال الاختبار -->
     </div>
+
+    <button id="submit-quiz" onclick="correctAnswers()">إرسال الإجابات</button>
+    
 <script>
+function correctAnswers() {
+  const correctAnswers = [
+    "B", "C", "A", "D", "B", "C", "A", "D", "A", "B",
+    "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
+    "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
+    "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
+    "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
+    "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
+    "A", "B", "C", "D", "A", "B", "C", "D", "A", "B",
+    "C", "D", "A", "B", "C", "D", "A", "B", "C", "D",
+    "A", "B", "A", "B", "A", "B", "A", "B", "A", "B"
+  ];
+
+  let score = 0;
+  let total = correctAnswers.length;
+  let resultMessage = "";
+  
+  for (let i = 1; i <= total; i++) {
+    const selected = document.querySelector(`input[name="q${i}"]:checked`);
+    const question = document.querySelector(`input[name="q${i}"]`).closest('.question');
+    
+    // Check the selected answer
+    if (selected) {
+      if (selected.value === correctAnswers[i - 1]) {
+        score++;
+        question.classList.add('correct');
+      } else {
+        question.classList.add('incorrect');
+      }
+    }
+  }
+
+  resultMessage = `Your score is ${score} out of ${total}`;
+  document.getElementById('submit-quiz').textContent = resultMessage;
+    }
+    
     // الوظائف البرمجية للتفاعل مع الاختبار
     document.getElementById('save-student-info').addEventListener('click', function () {
         let name = document.getElementById('student-name').value;
